@@ -47,7 +47,7 @@ public class ThirdActivity extends AppCompatActivity {
         }
         else{
             title = "NOTE_" + (noteid + 1);
-            Helper.updateNote(title, date, UserInput);
+            Helper.updateNote(title, date, UserInput, login);
         }
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);

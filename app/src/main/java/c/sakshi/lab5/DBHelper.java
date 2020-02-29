@@ -38,8 +38,8 @@ public class DBHelper {
         createTable();
         sqLiteDatabase.execSQL(String.format("INSERT INTO notes (username, date, title, content) VALUES ('%s', '%s', '%s', '%s')", username, date, title, content));
     }
-    public void updateNote(String title, String date, String content){
+    public void updateNote(String title, String date, String content, String username){
         createTable();
-        sqLiteDatabase.execSQL(String.format("UPDATE notes set content = '%s', date = '%s' where title = '%s'", content, date, title));
+        sqLiteDatabase.execSQL(String.format("UPDATE notes set content = '%s', date = '%s' where title = '%s' AND username = '%s'", content, date, title, username));
     }
 }
